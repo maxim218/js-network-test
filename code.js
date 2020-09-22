@@ -64,3 +64,15 @@ function ajaxSendPost(urlString, bodyString, callback) {
         }
     }
 }
+
+function fetchSendPost(urlString, bodyString, callback) {
+    fetch(urlString, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json;charset=utf-8'
+        },
+        body: bodyString,
+    })
+    .then(response => response.text())
+    .then(result => callback(result));
+}
