@@ -31,6 +31,11 @@ app.get("/code", function(request, response) {
     response.sendFile(__dirname + "/" + "code.js");
 });
 
+// get chai
+app.get("/chai", function(request, response) {
+    response.sendFile(__dirname + "/" + "chai.js");
+});
+
 // save file
 app.post("/save", function(request, response) {
     loadBody(request, function(body) {
