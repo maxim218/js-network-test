@@ -21,6 +21,11 @@ const port = 5000;
 app.listen(port);
 console.log("Server on port " + port);
 
+// axios
+app.get("/axios", function(request, response) {
+    response.sendFile(__dirname + "/" + "axios.min.js");
+});
+
 // get page
 app.get("/page", function(request, response) {
     response.sendFile(__dirname + "/" + "page.html");
