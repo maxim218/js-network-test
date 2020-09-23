@@ -86,3 +86,18 @@ function ajaxNewVersionPost(urlString, bodyString, callback) {
         callback(r.response);
     }
 }
+
+function axiosPost(urlString, bodyString, callback) {
+    axios({
+        method: 'post',
+        url: urlString,
+        data: bodyString,
+        headers: {'Content-Type': 'application/json;charset=utf-8'},
+    })
+    .then(function (response) {
+        const resObj = response.data;
+        const resStr = JSON.stringify(resObj);
+        callback(resStr);
+    });
+}
+
