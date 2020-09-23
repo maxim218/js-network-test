@@ -76,3 +76,13 @@ function fetchSendPost(urlString, bodyString, callback) {
     .then(response => response.text())
     .then(result => callback(result));
 }
+
+function ajaxNewVersionPost(urlString, bodyString, callback) {
+    let r = new XMLHttpRequest();
+    r.open("POST", urlString, true);
+    r.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+    r.send(bodyString);
+    r.onload = function() {
+        callback(r.response);
+    }
+}
